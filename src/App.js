@@ -11,6 +11,7 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
    const [ charData, setCharData ] = useState([]) //!will i need an array? probably..
+  //  const [ showMore, setShowMore ] = useState(true) //TODO: make this false before
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
