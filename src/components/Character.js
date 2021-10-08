@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
     justify-self: center;
     margin: 2%;
     height: 10%;
-    width: fill;
+    //* width: fill; //(not necessary for MVP)
     padding: 0% 2%;
 
     transition: 0.2s ease-in-out;
@@ -39,7 +39,7 @@ const StyledDiv = styled.div`
         //? ----- for the Name initial
         h1{
             display: flex;
-            align-self: left;
+            //*  align-self: left;  //(not necessary for MVP)
             font: 30pt News Gothic, sans-script;
             margin: 0;
         }
@@ -50,7 +50,7 @@ const StyledDiv = styled.div`
             height: fit-content;
             background-color: ${pr => pr.theme.backColor};
             color: ${pr => pr.theme.textColor};
-
+            //?additional HOVERS only while on button
             :hover{
                 transition: 0.5s ease-in-out;
                 background-color:  ${pr => pr.theme.backColor};
