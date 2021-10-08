@@ -7,19 +7,21 @@ import styled, {keyframes} from "styled-components";
 const StyledDiv = styled.div`
     display: flex;
     border: 1px solid black;
-    flex-flow: column wrap;
-    justify-content: center;
+    flex-flow: row wrap;
+    justify-self: center;
     margin: 2%;
     height: 10%;
-    width: fit-content;
+    width: fill;
+    padding: 0% 2%;
 
-    //TODO: add a transition
     transition: 0.2s ease-in-out;
+    //? ---- HOVERS
     &:hover{
         transition: all 0.2s ease-in-out;
         background-color: ${pr => pr.theme.transBColor};
         h1{
             color:  ${pr => pr.theme.transTColor};
+            text-shadow: 2px 2px ${pr => pr.theme.textColor};
         }
         button{
             background-color:  ${pr => pr.theme.textColor};
@@ -28,19 +30,32 @@ const StyledDiv = styled.div`
     };
     
     div {
-        color: ${pr => pr.theme.textColor};
         display: flex;
+        width: 100%;
+        justify-content: space-between;
+        color: ${pr => pr.theme.textColor};
+        text-shadow: 2px 2px ${pr => pr.theme.backColor};
         
+        //? ----- for the Name initial
         h1{
+            display: flex;
+            align-self: left;
             font: 30pt News Gothic, sans-script;
             margin: 0;
-            
         }
+
+        //? ------ for the button at initial
         button{
-            align-self: center;
+            align-self: flex-end;
             height: fit-content;
             background-color: ${pr => pr.theme.backColor};
             color: ${pr => pr.theme.textColor};
+
+            :hover{
+                transition: 0.5s ease-in-out;
+                background-color:  ${pr => pr.theme.backColor};
+                color:  ${pr => pr.theme.textColor};                
+            }
         }
     }
 `
@@ -52,7 +67,7 @@ export default function Character(props){
 
     return(
         <StyledDiv>
-            <div>
+            <div className='HERE'>
                 <h1>{name}</h1>
                 <button >{birthyear}</button>  {/* *****TODO onClick={(() => onClick)} **** */}
             </div>
