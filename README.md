@@ -79,6 +79,26 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. Put your answers underneath the questions:
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
-1. Describe component state.
-1. Describe props.
-1. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+    - React was developed by facebook to solve the problem of full page refresh. Facebook developed react in order to deal with changed happening to individual components in the DOM. They had so many clicks on their page that updates When you click a like button, not only as a shorthand, but 
+    **not finished here**
+
+2. Describe component state.
+
+    - **trying to think of the best way to describe this one**
+
+
+
+3. Describe props.
+
+    - props are what is used to pass information from one component to the next (parent to child). I would describe it as a translator -- in the example below, the component's props are given to the component in an already broken down form 
+          <Component usHistory={history.unitedStates}/>
+      Now Component can do what it wants with our "usHistory" variable without having to take into account the other topics of history. 
+      **HM would this have something to do withh scoping of components?? interesting**
+  
+    As another example: the parent is defining the term for the child and passing it over as a package name, kind of like telling the child:
+      Parent: "Here is some paint for your room -- you now go construct your room (which is in my house) and when you are done, it will be a part of my home. But you did the work, Child. " 
+
+4. What are side effects, and how do you sync effects in a React component to changes of certain state or props?
+
+    - Side effects are things that happen to the DOM due to renders or updates of information. Side effects can be triggered by many things (clicks, mouse moves, load), but they can be restricted to a certain component based on the use effect's dependency array.The dependency array is what gives the useEffect the que to track a specific state component.
