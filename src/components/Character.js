@@ -14,6 +14,18 @@ const StyledDiv = styled.div`
     width: fit-content;
 
     //TODO: add a transition
+    transition: 0.2s ease-in-out;
+    &:hover{
+        transition: all 0.2s ease-in-out;
+        background-color: ${pr => pr.theme.transBColor};
+        h1{
+            color:  ${pr => pr.theme.transTColor};
+        }
+        button{
+            background-color:  ${pr => pr.theme.textColor};
+            color:  ${pr => pr.theme.backColor};
+        }
+    };
     
     div {
         color: ${pr => pr.theme.textColor};
@@ -29,11 +41,6 @@ const StyledDiv = styled.div`
             height: fit-content;
             background-color: ${pr => pr.theme.backColor};
             color: ${pr => pr.theme.textColor};
-            
-            transition: 0.2s ease-in-out;
-            &:hover{
-                
-            }
         }
     }
 `
