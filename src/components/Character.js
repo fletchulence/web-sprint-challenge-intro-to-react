@@ -61,15 +61,16 @@ const StyledDiv = styled.div`
 `
 
 export default function Character(props){
-    const { name, birthyear } = props;
+    const { name, birthyear, films } = props;
 
-    //console.log(name)
+    console.log(films)
 
     return(
         <StyledDiv>
             <div className='HERE'>
                 <h1>{name}</h1>
-                <button >{birthyear}</button>  {/* *****TODO onClick={(() => onClick)} **** */}
+                <button >{birthyear}</button>  {/* *****TODO onClick={(() => onClick)} to show films **** */}
+                {/* <span>{films.map(el => el)}</span> */}
             </div>
         </StyledDiv>
     );
