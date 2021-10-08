@@ -1,5 +1,7 @@
 // Write your Character component here
-import react from "react"; //TODO: doubt i'll need to add a useState or effect here
+import React from "react"; //TODO: doubt i'll need to add a useState or effect here
+
+import Films from "./Films/Films";
 
 //styling
 import styled, {keyframes} from "styled-components";
@@ -10,7 +12,7 @@ const StyledDiv = styled.div`
     flex-flow: row wrap;
     justify-self: center;
     margin: 2%;
-    height: 10%;
+    height: auto;
     //* width: fill; //(not necessary for MVP)
     padding: 0% 2%;
 
@@ -61,18 +63,21 @@ const StyledDiv = styled.div`
 `
 
 export default function Character(props){
-    const { name, birthyear, films } = props;
+    const { name, birthyear, films /* movies */ } = props;
 
     console.log(films)
 
     return(
+        <>
         <StyledDiv>
             <div className='HERE'>
                 <h1>{name}</h1>
                 <button >{birthyear}</button>  {/* *****TODO onClick={(() => onClick)} to show films **** */}
-                {/* <span>{films.map(el => el)}</span> */}
             </div>
+            <Films films={films}/>
         </StyledDiv>
+        
+        </>
     );
 
 }
