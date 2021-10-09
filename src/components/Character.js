@@ -60,23 +60,37 @@ const StyledDiv = styled.div`
             }
         }
     }
+    .films{
+        display: flex;
+         border: 3px dotted red;
+        width: 100%;
+    }
 `
 
 export default function Character(props){
-    const { name, birthyear, films /* movies */ } = props;
+    const { name, birthyear, films, onClick, show } = props;
 
-    console.log(films)
 
     return(
         <>
         <StyledDiv>
             <div className='HERE'>
                 <h1>{name}</h1>
-                <button >{birthyear}</button>  {/* *****TODO onClick={(() => onClick)} to show films **** */}
+                <button onClick={(el) => onClick(el)} >{birthyear}</button>  {/* *****TODO onClick={(() => onClick)} to show films **** */}
             </div>
-            <Films films={films}/>
+
+            <div className="films">
+            { show ?  films.map((el, index) => {
+                    return (
+                        <Films 
+                            key={index}
+                            films={el}
+                        /> 
+                        ) 
+                    }) 
+            : null }
+                </div>
         </StyledDiv>
-        
         </>
     );
 
