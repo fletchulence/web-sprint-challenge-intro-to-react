@@ -77,7 +77,7 @@ export default function Character(props){
             filmData,
             filmId } = props;
 
-    // console.log(films)
+     console.log(filmId)
     return(
         <>
         <StyledDiv>
@@ -87,10 +87,10 @@ export default function Character(props){
             </div>
 
             <div className="films"> 
-            { films === charId ?  films.map((el) => {
+            { films === charId ?  films.map((el, index) => {
                     return (
                         <Films 
-                            key={el.index}
+                            key={index}
                             films={el}
                             actionMovie={actionMovie}
                             filmData={filmData}

@@ -7,6 +7,7 @@ const StyledMovies = styled.div`
   border: 1px solid grey;
   display: flex;
   justify-content: center;
+  flex-flow: column nowrap;
   
   div{
     // border: 1px solid blue;
@@ -28,19 +29,24 @@ const StyledMovies = styled.div`
 function Films(props) {
     const { films, actionMovie, filmData, filmId } = props;
 
+    // const movieData1 = filmData.map((el) =>{
+    //   return el
+    // })
+    // console.log(movieData1)
+
 // console.log(filmId)
     return(
         <StyledMovies>
 
           <div onClick={() => actionMovie(filmData)}>{films}</div>
         
-          { filmId === filmData ?  filmData.map((el) => {
+          { filmId === filmData ?  filmData.map((el, index) => {
                     return (
                         <FilmData 
-                            key={el.index}
+                            key={index}
                             story={el.opening_crawl}
-                            movieName={el.name}
-                            
+                            movieName={el.title}
+                            films={films}
                         /> 
                         ) 
                     }) 

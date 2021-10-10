@@ -1,16 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// import filmData from './filmData';
 
 
 export default function FilmData (props) {
-    const { story, movieName } = props;
+    const { story, movieName, films } = props;
 
-    console.log(story)
+    console.log(movieName)
+
+    // console.log(story)
     return(
       <div>
-      {story}
+      {movieName === films ? story : null}
       </div>
     );
 }
