@@ -91,7 +91,7 @@ const App = () => {
             name={el.name} 
             birthyear={el.birth_year}
             films={el.films}
-            show={charId}
+            showFilms={charId}
            />
            )
         } 
