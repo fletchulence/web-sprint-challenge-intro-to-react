@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 
 export default function FilmData (props) {
-    const { story } = props;
+    const { story, movieName } = props;
 
     console.log(story)
     return(

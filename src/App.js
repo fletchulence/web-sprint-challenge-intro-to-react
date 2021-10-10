@@ -72,8 +72,8 @@ const App = () => {
     // console.log(filmData)
     
     
-    const openDetailsMovie = (el) =>{
-      setFilmId(el)
+    const openDetailsMovie = (index) =>{
+      setFilmId(index)
     }
 
   

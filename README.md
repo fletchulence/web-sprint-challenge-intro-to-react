@@ -80,12 +80,11 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What is React JS and what problems does it solve? Support your answer with concepts introduced in class and from your personal research on the web.
 
-    - React was developed by facebook to solve the problem of full page refresh. Facebook developed react in order to deal with changed happening to individual components in the DOM. They had so many clicks on their page that updates When you click a like button, not only as a shorthand, but 
-    **not finished here**
+    - React was developed by facebook to solve the problem of full page refresh. Facebook developed react in order to deal with changed happening to individual components in the DOM. They had so many clicks on their page that updates When you click a like button, not only as a shorthand, but also to handle a refresh of information in a smaller dose. This allows for more information to pass through easier and without complication.
 
 2. Describe component state.
 
-    - **trying to think of the best way to describe this one**
+    - component state is a javascript Object that  is managed within the component -- kind of like variables declared within funcitons. They are linked indescriminately thru your process back and forth.
 
 
 

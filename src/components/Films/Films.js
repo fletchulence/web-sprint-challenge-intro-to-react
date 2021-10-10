@@ -37,7 +37,7 @@ function Films(props) {
           { filmId === filmData ?  filmData.map((el) => {
                     return (
                         <FilmData 
-                            key={el.episode_id}
+                            key={el.index}
                             story={el.opening_crawl}
                             movieName={el.name}
                             
