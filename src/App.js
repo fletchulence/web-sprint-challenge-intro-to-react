@@ -72,9 +72,9 @@ const App = () => {
     }
     
     console.log(filmData)
-    console.log(filmId)
     
     const openDetailsMovie = (index) =>{
+      console.log(filmId)
       setFilmId(index)
     }
 
@@ -88,6 +88,7 @@ const App = () => {
           <Characters 
             key={index} 
             actionFilms={openDetailsChar}
+            actionMovie={openDetailsMovie}
             name={el.name} 
             birthyear={el.birth_year}
             films={el.films}

@@ -62,13 +62,13 @@ const StyledDiv = styled.div`
     }
     .films{
         display: flex;
-         border: 3px dotted red;
+        //  border: 3px dotted red;
         width: 100%;
     }
 `
 
 export default function Character(props){
-    const { name, birthyear, films, actionFilms, showFilms } = props;
+    const { name, birthyear, films, actionFilms, showFilms, actionMovie } = props;
 
     console.log(films)
     return(
@@ -79,12 +79,13 @@ export default function Character(props){
                 <button onClick={() => actionFilms(films)} >{birthyear}</button>  {/* *****TODO onClick={(() => onClick)} to show films **** */}
             </div>
 
-            <div className="films">
+            <div className="films"> 
             { films === showFilms ?  films.map((el) => {
                     return (
                         <Films 
                             key={el.index}
                             films={el}
+                            actionMovie={actionMovie}
                         /> 
                         ) 
                     }) 
