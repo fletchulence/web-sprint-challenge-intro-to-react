@@ -11,13 +11,11 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
    const [ charData, setCharData ] = useState([]) //!will i need an array? probably..
-   const [ charId, setCharId ] = useState(null) //TODO
-   
    const [ filmData, setFilmData ] = useState([]) //TODO
-   const [ filmId, setFilmId ] = useState(null) //TODO
    
-   //show or hide based on click
-   const [ show, setShow ] = useState('');
+   //show or hide based on click -- initialize null
+   const [ charId, setCharId ] = useState(null) //TODO
+   const [ filmId, setFilmId ] = useState(null) //TODO
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -71,11 +69,11 @@ const App = () => {
       setCharId(index)
     }
     
-    console.log(filmData)
+    // console.log(filmData)
     
-    const openDetailsMovie = (index) =>{
-      console.log(filmId)
-      setFilmId(index)
+    
+    const openDetailsMovie = (el) =>{
+      setFilmId(el)
     }
 
   
@@ -92,7 +90,9 @@ const App = () => {
             name={el.name} 
             birthyear={el.birth_year}
             films={el.films}
-            showFilms={charId}
+            charId={charId}
+            filmData={filmData}
+            filmId={filmId}
            />
            )
         } 

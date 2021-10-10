@@ -68,9 +68,16 @@ const StyledDiv = styled.div`
 `
 
 export default function Character(props){
-    const { name, birthyear, films, actionFilms, showFilms, actionMovie } = props;
+    const { name, 
+            birthyear, 
+            films, 
+            actionFilms, 
+            charId, 
+            actionMovie, 
+            filmData,
+            filmId } = props;
 
-    console.log(films)
+    // console.log(films)
     return(
         <>
         <StyledDiv>
@@ -80,12 +87,14 @@ export default function Character(props){
             </div>
 
             <div className="films"> 
-            { films === showFilms ?  films.map((el) => {
+            { films === charId ?  films.map((el) => {
                     return (
                         <Films 
                             key={el.index}
                             films={el}
                             actionMovie={actionMovie}
+                            filmData={filmData}
+                            filmId={filmId}
                         /> 
                         ) 
                     }) 

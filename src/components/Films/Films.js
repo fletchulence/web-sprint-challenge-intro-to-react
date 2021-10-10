@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-// import filmData from './filmData';
+import FilmData from './filmData';
 
 const StyledMovies = styled.div`
   border: 1px solid grey;
@@ -26,24 +26,25 @@ const StyledMovies = styled.div`
 
 
 function Films(props) {
-    const { films, actionMovie } = props;
+    const { films, actionMovie, filmData, filmId } = props;
 
-console.log(films)
+// console.log(filmId)
     return(
         <StyledMovies>
-          
-          <div onClick={() => actionMovie()}>{films}</div>
+
+          <div onClick={() => actionMovie(filmData)}>{films}</div>
         
-          {/* { films === showFilmStory ?  films.map((el) => {
+          { filmId === filmData ?  filmData.map((el) => {
                     return (
-                        <Films 
-                            key={el.index}
-                            films={el}
-                            actionMovie={actionMovie}
+                        <FilmData 
+                            key={el.episode_id}
+                            story={el.opening_crawl}
+                            movieName={el.name}
+                            
                         /> 
                         ) 
                     }) 
-            : null } */}
+            : null }
         </StyledMovies>
 
     );
