@@ -11,11 +11,13 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
    const [ charData, setCharData ] = useState([]) //!will i need an array? probably..
-
+   const [ charId, setCharId ] = useState(null) //TODO
+   
    const [ filmData, setFilmData ] = useState([]) //TODO
+   const [ filmId, setFilmId ] = useState(null) //TODO
    
    //show or hide based on click
-   const [ show, setShow ] = useState(null);
+   const [ show, setShow ] = useState('');
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -25,10 +27,8 @@ const App = () => {
     function getPeopleData(){
       axios.get(`https://swapi.dev/api/people`)
       .then( res => {
-        // console.log(res.data)  //! datums within array of data within objects
+        //  console.log(res.data)  //! datums within array of data within objects
         setCharData(res.data)
-        
-
       })
       .catch(err => {
         console.error(err)
@@ -40,9 +40,9 @@ const App = () => {
    // ----- FOR FILMS DATA (STRETCH) -----
    useEffect(() => {
     function getFilmsData(){
-      axios.get(`https://swapi.dev/api/films`)
+      axios.get(`https://swapi.dev/api/films/`)
       .then( res => {
-        console.log(res.data.results)  //! datums within array of data within objects
+        // console.log(res.data.results)  //! datums within array of data within objects
         setFilmData(res.data.results)
        
       })
@@ -51,9 +51,9 @@ const App = () => {
       })
     }
     getFilmsData()
-   }, [])
+   }, [charId])
 
-
+// console.log(charId)
 
   // console.log(charData)  //! testing output
   // console.log(movies)  //! testing output
@@ -67,9 +67,18 @@ const App = () => {
   //     console.log(el.films)
   //  })
 
-  const onClick = (el) =>{
-    setShow(el)
-  }
+   const openDetailsChar = (index) =>{
+      setCharId(index)
+    }
+    
+    console.log(filmData)
+    console.log(filmId)
+    
+    const openDetailsMovie = (index) =>{
+      setFilmId(index)
+    }
+
+  
 
   return (
     <div className="App">
@@ -78,11 +87,11 @@ const App = () => {
           return (
           <Characters 
             key={index} 
-            onClick={onClick}
+            actionFilms={openDetailsChar}
             name={el.name} 
             birthyear={el.birth_year}
             films={el.films}
-            show={show}
+            show={charId}
            />
            )
         } 

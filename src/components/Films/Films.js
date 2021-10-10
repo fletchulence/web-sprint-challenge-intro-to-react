@@ -19,10 +19,9 @@ const StyledMovies = styled.div`
 
 
 function Films(props) {
-    const { films, key } = props;
+    const { films } = props;
 
-    console.log(key)
-
+console.log(films)
     return(
       <StyledMovies>
         <div>{films}</div>
