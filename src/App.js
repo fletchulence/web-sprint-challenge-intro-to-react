@@ -25,7 +25,6 @@ const App = () => {
     function getPeopleData(){
       axios.get(`https://swapi.dev/api/people`)
       .then( res => {
-        //  console.log(res.data)  //! datums within array of data within objects
         setCharData(res.data)
       })
       .catch(err => {
@@ -40,7 +39,6 @@ const App = () => {
     function getFilmsData(){
       axios.get(`https://swapi.dev/api/films/`)
       .then( res => {
-        // console.log(res.data.results)  //! datums within array of data within objects
         setFilmData(res.data.results)
        
       })
@@ -51,33 +49,17 @@ const App = () => {
     getFilmsData()
    }, [charId])
 
-// console.log(charId)
-
-  // console.log(charData)  //! testing output
-  // console.log(movies)  //! testing output
-
-  //! testing map function
-  // console.log(charData)
-
-  // charData.map(el => {
-  //     console.log(el.name)
-  //     console.log(el.birth_year)
-  //     console.log(el.films)
-  //  })
-
+   //opening my character details (1st axios)
    const openDetailsChar = (index) =>{
       setCharId(index)
     }
     
-    // console.log(filmData)
-    
-    
+    //opening my movie details (2nd axios)
     const openDetailsMovie = (index) =>{
       setFilmId(index)
     }
 
   
-
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
@@ -89,7 +71,10 @@ const App = () => {
             actionMovie={openDetailsMovie}
             name={el.name} 
             birthyear={el.birth_year}
+            
+            /* stretch */
             films={el.films}
+            /*  */
             charId={charId}
             filmData={filmData}
             filmId={filmId}
